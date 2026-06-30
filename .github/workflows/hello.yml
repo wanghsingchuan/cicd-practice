@@ -12,6 +12,6 @@ jobs:
       - name: 打招呼
         run: echo "Hello Github Action"
       - name: 顯示目前時間
-        uses: date
+        run: date
       - name: 顯示系統資訊
         run: uname -a
