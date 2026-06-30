@@ -1,0 +1,24 @@
+name: Basic Flask
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  runs-on-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取程式碼
+        uses: actions/checkout@v4
+
+      - name: 安裝 Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: 安裝相依套件
+        run: pip install -r requirements.txt
+
+      - name: 執行 Flask 應用程式
+        run: python -m pytest -v
